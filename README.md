@@ -1,4 +1,5 @@
-# ContactBookGit
-This is a starter kit for the first lab of the Software Engineering Course.
-Fork this project to make your own version of it.
+This is our project.
 
+Team members:
+Daniel Cruz 62436
+Guilherme Frazão 63286
