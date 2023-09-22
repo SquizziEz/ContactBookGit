@@ -53,6 +53,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case "GN":
+                    getContact(in, cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -146,5 +149,18 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void getContact(Scanner in, ContactBook cBook) {
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+        if(!cBook.hasPhoneNumber(phone)) {
+            System.out.println("Phone number does not exist.");
+        }
+        else {
+            String name = cBook.getNameByPhoneNumber(phone);
+            System.out.println(name);
+        }
+
     }
 }
