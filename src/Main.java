@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 
 public class Main {
-    //Constantes que definem os comandos
+    
+	//Constantes que definem os comandos
     public static final String ADD_CONTACT    = "AC";
     public static final String REMOVE_CONTACT = "RC";
     public static final String GET_PHONE      = "GP";
@@ -13,6 +14,7 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
+    public static final String EXISTS_SAME_PHONE_NUMBER = "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -56,6 +58,9 @@ public class Main {
                 case "GN":
                     getContact(in, cBook);
                     break;
+                    
+                case EXISTS_SAME_PHONE_NUMBER:
+                	existsSamePhoneNumber(cBook);
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -162,5 +167,13 @@ public class Main {
             System.out.println(name);
         }
 
+    }
+    
+    
+    private static void existsSamePhoneNumber(ContactBook cBook) {
+    	if(cBook.existsContactsWithSamePhoneNumber())
+    		System.out.println("There are contacts that share phone numbers.");
+    	else
+    		System.out.println("All contacts have different phone numbers.");
     }
 }
