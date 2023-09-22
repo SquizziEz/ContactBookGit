@@ -104,4 +104,16 @@ public class ContactBook {
     	return false;
     }
 
+    public Contact getNameByPhoneNumber(int phone) {
+        Contact contact = null;
+        boolean found = false;
+        for(int i = 0; i < contacts.length && !found; i++) {
+            if(contacts[i].getPhone() == phone) {
+                found = true;
+                contact = contacts[i];
+            }
+        }
+        return contact;
+    }
+
 }

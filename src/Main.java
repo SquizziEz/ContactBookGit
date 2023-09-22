@@ -154,12 +154,12 @@ public class Main {
     private static void getContact(Scanner in, ContactBook cBook) {
         int phone;
         phone = in.nextInt(); in.nextLine();
-        if(!cBook.hasPhoneNumber(phone)) {
+        Contact contact = cBook.getNameByPhoneNumber(phone);
+        if(contact == null) {
             System.out.println("Phone number does not exist.");
         }
         else {
-            String name = cBook.getNameByPhoneNumber(phone);
-            System.out.println(name);
+            System.out.println(contact.getName());
         }
 
     }
